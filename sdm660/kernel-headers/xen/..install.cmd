@@ -1,1 +1,0 @@
-cmd_hahayes/include/xen/.install := /bin/bash ../scripts/headers_install.sh hahayes/include/xen ../include/uapi/xen evtchn.h gntalloc.h gntdev.h privcmd.h; /bin/bash ../scripts/headers_install.sh hahayes/include/xen ./include/generated/uapi/xen ; for F in ; do echo "$(pound)include <asm-generic/$$F>" > hahayes/include/xen/$$F; done; touch hahayes/include/xen/.install
