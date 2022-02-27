@@ -1,26 +1,35 @@
-/* SPDX-License-Identifier: GPL-2.0-only WITH Linux-syscall-note */
-/*
- * Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
- */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef __MSM_CVP_UTILS_H__
 #define __MSM_CVP_UTILS_H__
-
 #include <linux/types.h>
-
-#define MSM_CVP_HAL_INTERLACE_COLOR_FORMAT_NV12	0x2
-#define MSM_CVP_HAL_INTERLACE_COLOR_FORMAT_NV12_UBWC	0x8002
+#define MSM_CVP_HAL_INTERLACE_COLOR_FORMAT_NV12 0x2
+#define MSM_CVP_HAL_INTERLACE_COLOR_FORMAT_NV12_UBWC 0x8002
 #define MSM_CVP_EXTRADATA_FRAME_QP_ADV 0x1
-
 struct msm_cvp_mastering_display_colour_sei_payload {
-	unsigned int nDisplayPrimariesX[3];
-	unsigned int nDisplayPrimariesY[3];
-	unsigned int nWhitePointX;
-	unsigned int nWhitePointY;
-	unsigned int nMaxDisplayMasteringLuminance;
-	unsigned int nMinDisplayMasteringLuminance;
+  unsigned int nDisplayPrimariesX[3];
+  unsigned int nDisplayPrimariesY[3];
+  unsigned int nWhitePointX;
+  unsigned int nWhitePointY;
+  unsigned int nMaxDisplayMasteringLuminance;
+  unsigned int nMinDisplayMasteringLuminance;
 };
-
-/* msm_cvp_extradata_type */
 #define MSM_CVP_EXTRADATA_NONE 0x00000000
 #define MSM_CVP_EXTRADATA_MB_QUANTIZATION 0x00000001
 #define MSM_CVP_EXTRADATA_INTERLACE_VIDEO 0x00000002
@@ -50,22 +59,15 @@ struct msm_cvp_mastering_display_colour_sei_payload {
 #define MSM_CVP_EXTRADATA_METADATA_LTR 0x7F100004
 #define MSM_CVP_EXTRADATA_METADATA_MBI 0x7F100005
 #define MSM_CVP_EXTRADATA_VUI_DISPLAY_INFO 0x7F100006
-
-/* msm_cvp_framepack_type */
 #define MSM_CVP_FRAMEPACK_CHECKERBOARD 0x00
 #define MSM_CVP_FRAMEPACK_COLUMN_INTERLEAVE 0x01
 #define MSM_CVP_FRAMEPACK_ROW_INTERLEAVE 0x02
 #define MSM_CVP_FRAMEPACK_SIDE_BY_SIDE 0x03
 #define MSM_CVP_FRAMEPACK_TOP_BOTTOM 0x04
 #define MSM_CVP_FRAMEPACK_TEMPORAL_INTERLEAVE 0x05
-
-/* msm_cvp_userdata_type */
 #define MSM_CVP_USERDATA_TYPE_FRAME 0x1
 #define MSM_CVP_USERDATA_TYPE_TOP_FIELD 0x2
 #define MSM_CVP_USERDATA_TYPE_BOTTOM_FIELD 0x3
-
-/* See colour_primaries of ISO/IEC 14496 for significance */
-/* msm_cvp_h264_color_primaries_values */
 #define MSM_CVP_RESERVED_1 0
 #define MSM_CVP_BT709_5 1
 #define MSM_CVP_UNSPECIFIED 2
@@ -74,26 +76,15 @@ struct msm_cvp_mastering_display_colour_sei_payload {
 #define MSM_CVP_BT601_6_625 5
 #define MSM_CVP_BT470_6_BG MSM_CVP_BT601_6_625
 #define MSM_CVP_BT601_6_525 6
-
-/* msm_cvp_pixel_depth */
 #define MSM_CVP_BIT_DEPTH_8 0
 #define MSM_CVP_BIT_DEPTH_10 1
 #define MSM_CVP_BIT_DEPTH_UNSUPPORTED 0XFFFFFFFF
-
-/* msm_cvp_video_format */
 #define MSM_CVP_COMPONENT 0
 #define MSM_CVP_PAL 1
 #define MSM_CVP_NTSC 2
-
-/* msm_cvp_color_desc_flag */
 #define MSM_CVP_COLOR_DESC_NOT_PRESENT 0
 #define MSM_CVP_COLOR_DESC_PRESENT 1
-
-/*  msm_cvp_pic_struct */
 #define MSM_CVP_PIC_STRUCT_MAYBE_INTERLACED 0x0
 #define MSM_CVP_PIC_STRUCT_PROGRESSIVE 0x1
-
-/*default when layer ID isn't specified*/
 #define MSM_CVP_ALL_LAYER_ID 0xFF
-
 #endif

@@ -1,35 +1,37 @@
-/* SPDX-License-Identifier: GPL-2.0-only WITH Linux-syscall-note */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef __VM_BMS_H__
 #define __VM_BMS_H__
-
-#define VM_BMS_DEVICE			"/dev/vm_bms"
-#define MAX_FIFO_REGS			8
-
-/**
- * struct qpnp_vm_bms_data - vm-bms data (passed to usersapce)
- * @data_type:			type of data filled up
- * @num_fifo:			count of valid fifo averages
- * @fifo_uv:			array of fifo averages in uv
- * @sample_interval		sample interval of the fifo data in ms
- * @sample_count		total samples in one fifo
- * @acc_uv			averaged accumulator value in uv
- * @acc_count			num of accumulated samples
- * @seq_num			sequence number of the data
- */
+#define VM_BMS_DEVICE "/dev/vm_bms"
+#define MAX_FIFO_REGS 8
 struct qpnp_vm_bms_data {
-	unsigned int num_fifo;
-	unsigned int fifo_uv[MAX_FIFO_REGS];
-	unsigned int sample_interval_ms;
-	unsigned int sample_count;
-	unsigned int acc_uv;
-	unsigned int acc_count;
-	unsigned int seq_num;
+  unsigned int num_fifo;
+  unsigned int fifo_uv[MAX_FIFO_REGS];
+  unsigned int sample_interval_ms;
+  unsigned int sample_count;
+  unsigned int acc_uv;
+  unsigned int acc_count;
+  unsigned int seq_num;
 };
-
 enum vmbms_power_usecase {
-	VMBMS_IGNORE_ALL_BIT = 1,
-	VMBMS_VOICE_CALL_BIT = (1 << 4),
-	VMBMS_STATIC_DISPLAY_BIT = (1 << 5),
+  VMBMS_IGNORE_ALL_BIT = 1,
+  VMBMS_VOICE_CALL_BIT = (1 << 4),
+  VMBMS_STATIC_DISPLAY_BIT = (1 << 5),
 };
-
-#endif	/* __VM_BMS_H__ */
+#endif

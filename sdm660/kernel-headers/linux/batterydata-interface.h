@@ -1,31 +1,34 @@
-/* SPDX-License-Identifier: GPL-2.0-only WITH Linux-syscall-note */
+/****************************************************************************
+ ****************************************************************************
+ ***
+ ***   This header was automatically generated from a Linux kernel header
+ ***   of the same name, to make information necessary for userspace to
+ ***   call into the kernel available to libc.  It contains only constants,
+ ***   structures, and macros generated from the original header, and thus,
+ ***   contains no copyrightable information.
+ ***
+ ***   To edit the content of this header, modify the corresponding
+ ***   source file (e.g. under external/kernel-headers/original/) then
+ ***   run bionic/libc/kernel/tools/update_all.py
+ ***
+ ***   Any manual change here will be lost the next time this script will
+ ***   be run. You've been warned!
+ ***
+ ****************************************************************************
+ ****************************************************************************/
 #ifndef __BATTERYDATA_LIB_H__
 #define __BATTERYDATA_LIB_H__
-
 #include <linux/ioctl.h>
-
-/**
- * struct battery_params - Battery profile data to be exchanged.
- * @soc:	SOC (state of charge) of the battery
- * @ocv_uv:	OCV (open circuit voltage) of the battery
- * @rbatt_sf:	RBATT scaling factor
- * @batt_temp:	Battery temperature in deci-degree.
- * @slope:	Slope of the OCV-SOC curve.
- * @fcc_mah:	FCC (full charge capacity) of the battery.
- */
 struct battery_params {
-	int soc;
-	int ocv_uv;
-	int rbatt_sf;
-	int batt_temp;
-	int slope;
-	int fcc_mah;
+  int soc;
+  int ocv_uv;
+  int rbatt_sf;
+  int batt_temp;
+  int slope;
+  int fcc_mah;
 };
-
-/*  IOCTLs to query battery profile data */
-#define BPIOCXSOC	_IOWR('B', 0x01, struct battery_params) /* SOC */
-#define BPIOCXRBATT	_IOWR('B', 0x02, struct battery_params) /* RBATT SF */
-#define BPIOCXSLOPE	_IOWR('B', 0x03, struct battery_params) /* SLOPE */
-#define BPIOCXFCC	_IOWR('B', 0x04, struct battery_params) /* FCC */
-
+#define BPIOCXSOC _IOWR('B', 0x01, struct battery_params)
+#define BPIOCXRBATT _IOWR('B', 0x02, struct battery_params)
+#define BPIOCXSLOPE _IOWR('B', 0x03, struct battery_params)
+#define BPIOCXFCC _IOWR('B', 0x04, struct battery_params)
 #endif
